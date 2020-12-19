@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="animate.js"></script>
+</head>
+<body>
+	<button onclick="topFunction()" id="myBtn" >点我返回顶部</button>
+	<div class="above clear" id="above">
+		<div class="name">Taylor Swift</div>
+		<div class="daohang clear">
+			<ul class="navi clear">
+				<li><a  href="#" onclick="back()"> home  </a></li>
+				<li><a  href="#"> mercb </a></li>
+				<li><a  href="#"> song  </a></li>
+				<li><a  href="#"> ablum </a></li>
+				<li><a  href="#"> vdeio </a></li>
+				<li><a  href="#"> events</a></li>
+				<li><a  href="#"> awards</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="bigbox">
+		<div class="box" id="box">
+				<div class="slider clear" id="slider">
+					<div class="slide"><img src="imgs/banner5.jfif" alt=""></div>
+					<div class="slide"><img src="imgs/banner1.jpeg" alt=""></div>
+					<div class="slide"><img src="imgs/banner2.jpeg" alt=""></div>
+					<div class="slide"><img src="imgs/banner3.jpeg" alt=""></div>
+					<div class="slide"><img src="imgs/banner4.jpg"  alt=""></div>
+					<div class="slide"><img src="imgs/banner5.jfif" alt=""></div>
+					<div class="slide"><img src="imgs/banner1.jpeg" alt=""></div>
+				</div>
+				<ul class="nav" id="nav">
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+		</div>
+		<div class="right" id="right">
+				<p> 霉霉空降发行第九张专辑</p><br/>
+				<img src="imgs/evenmore.jpg" alt="" id="album" onclick="more()">
+				<br/>
+				<div class="abl" id="more" onclick="more()"><a href="#"><label>《 evermore 》</label></a></div>
+				<div class="abl" id="buy"/><a href="#"><label onclick="Open()">立即购买</label></a></div>
+		</div>
+		<div class="right" id="right2">
+				<h3>伦敦音乐杂志《musicOMH》的Chloe Johnson近期对《evermore》的评价：<br/>
+				泰勒·斯威夫特(Taylor Swift)说她永远不会让我们平静下来，她没有撒谎。当她宣布开始原曲重录之后，没有人会想到Taylor Swift的新专辑会是如此的新颖而优质。7月份发行的《folklore》继续在神奇世界发生着异想天开的故事，这为她赢得了格莱美的提名肯定。另外，这位创作型歌手似乎还不想走出森林，仅仅五个月后，她就出人意料地发行了姊妹专辑《Evermore》。
+				《Willow》以一种萦绕于心的视角开始，以“生命是一棵柳树/它向你的风弯曲”这样迷人的歌词为特色，遵循了Taylor 	Swift标志性的巧妙	进展，轻快的嗓音和由小提琴和钟琴组成的咒语般的听觉效果。再结合她之前发行的歌曲，仿佛她自己已经成为灵巧的民间传说。这是一首绝美的歌曲，没有《folklore》主打单曲Cardigan中的那种沉重的痛苦。但是有了像《Tolerate It 》和《Coney Island》这样的歌曲，你会因为渐渐进入佳境而深感喜悦！<br/>
+				</h3>
+				<button  onclick="back()" id="but"> << back</button>
+		</div>
+
+	</div>
+	<div class="middle clear">
+		<div class="tit"> 更  多  专  辑 </div>
+		<div class="mid"><img src="imgs/1989.png" alt="" class="shadow" onclick="Open()"><button class="button">点击购买</button></div>	
+		<div class="mid"><img src="imgs/rep.jpg" alt="" class="shadow" onclick="Open()"><button class="button">点击购买</button></div>
+		<div class="mid"><img src="imgs/lover.jpg" alt="" class="shadow" onclick="Open()"><button class="button">点击购买</button></div>
+		<div class="mid"><img src="imgs/forklore.jpeg" alt="" class="shadow" onclick="Open()"><button class="button">点击购买</button></div>	
+	</div>
+	<div class="bg2" >
+		<div class="bottom">
+			<h5>
+			We are passionate about music. To help us share that passion we'd like to use cookies and similar technologies to personalize your experiences on our sites and to advertise on other sites.
+				 By clicking Accept All or continuing to use the site, you agree to our use of analytics, marketing, and advertising cookies. For more information and additional choices click on Cookie Choices below. Privacy Policy.
+			</h5>
+		</div>
+	<div>
+
+
+	<script>
+		var box = document.getElementById('box');
+		var oNavlist = document.getElementById('nav').children;
+		var slider = document.getElementById('slider');
+		var bg2= document.getElementById("bg2");
+		var right= document.getElementById('right');
+		var album= document.getElementById('album');
+		var buy= document.getElementById('buy');
+		var index = 1;
+		var right2= document.getElementById('right2');
+		var timer;
+		var isMoving = false;
+		box.onmouseover = function(){
+			clearInterval(timer)
+		}
+		box.onmouseout = function(){
+			timer = setInterval(next, 3000);
+		}
+		for( var i=0; i<oNavlist.length; i++ ){
+			oNavlist[i].index = i;
+			oNavlist[i].onclick = function(){
+				index = this.index+1;
+				navmove();
+				animate(slider,{left:-690*index});
+			}
+		}
+		function next(){
+			if(isMoving){
+				return;
+			}
+			isMoving = true;
+			index++;
+			navmove();
+			animate(slider,{left:-690*index},function(){
+				if(index==6){
+					slider.style.left = '-690px';
+					index = 1;
+				}
+				isMoving = false;
+			});
+		}
+		function prev(){
+			if(isMoving){
+				return;
+			}
+			isMoving = true;
+			index--;
+			navmove();
+			animate(slider,{left:-690*index},function(){
+				if(index==0){
+					slider.style.left = '-4830px';
+					index = 5;
+				}
+				isMoving = false;
+			});
+		}
+		function navmove(){
+			for( var i=0; i<oNavlist.length; i++ ){
+				oNavlist[i].className = "";
+			}
+			if(index >5 ){
+				oNavlist[0].className = "active";
+			}else if(index<=0){
+				oNavlist[4].className = "active";
+			}else {
+				oNavlist[index-1].className = "active";
+			}
+		}
+		timer = setInterval(next, 3000);
+		function more(){
+			right.style.display="none";
+			right2.style.display="block";
+
+		}
+		function back(){
+			right2.style.display="none";
+			right.style.display="block";
+		}
+		function Open(){
+			window.open("https://music.163.com/#/album?id=120321112");
+		}
+		window.onscroll = function() {scrollFunction()};
+ 
+		function scrollFunction() {
+  			 if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+       					 document.getElementById("myBtn").style.display = "block";
+   			 } else {
+        				document.getElementById("myBtn").style.display = "none";
+  			  }
+		}
+		function topFunction() {
+    		document.body.scrollTop = 0;
+    		document.documentElement.scrollTop = 0;
+		}
+	</script>
+</body>
+</html>

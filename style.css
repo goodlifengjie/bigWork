@@ -1,0 +1,243 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.clear:after{
+		display: 
+		content:'';
+		display: block;
+		clear: both;
+		visibility: hidden;
+}
+#myBtn{
+	width: 150px;
+	height: 70px;
+	font-size: 20px;
+	font-family: "FZYaoti";
+	display: none;
+	position: fixed;
+	z-index: 99;
+	color: #000000;
+	bottom: 10px;
+	left: 50px;
+	border-radius: 8px;
+	background-color: white;
+
+}
+ul,li{
+	list-style: none;
+}
+#album {
+	overflow: hidden;
+	box-shadow: 13px 13px 5px #888888;
+}
+.bigbox{
+	width: 1500px;
+	height: 700px;
+	position: relative;
+	margin: 0px auto;
+}
+a{
+	text-decoration: none;
+	color: grey;
+	font-family:"FZYaoti";
+}
+a:hover{
+	color: rgba(0,0,0,0.8);
+}
+p{
+	font-size: 30px;
+	color: rgb(3,41,81);
+	font-family: "FZYaoti";
+}
+.abl{
+	text-align: center;
+	width: 300px;
+	height: 70px;
+	margin-left: 60px;
+}
+.abl:hover{
+	color: rgb(3,41,81);
+}
+.above{
+	width: 100%;
+	height: 80px;
+	position: relative;
+	background-color: rgba(236,221,203,0.8);
+	margin: 0 auto;
+
+	
+}
+.box{
+	width:690px;
+	height: 700px;
+	margin: 30px;
+	border: none;
+	position: relative;
+	overflow: hidden;
+}
+.navi{
+	text-align: center;
+}
+.daohang{
+	width: 800px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
+
+}
+
+.navi>li{
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	font-family: "FZYaoti";
+	font-size: 20px;
+	float:left;
+
+}
+.name{
+	margin-left: 50px;
+	margin-top: 20px;
+	width: 200px;
+	height: 50px;
+	float: left;
+	color: rgb(3,41,81);
+	font-size: 28px;
+}
+.slider{
+	width: 4830px;
+	position: absolute;
+	left: -690px;
+	overflow: hidden;
+}
+.slide{
+	width: 690px;
+	overflow: hidden;
+	float: left;
+}
+.right{
+	width: 500px;
+	height: 600px;
+	float: right;
+	display: block;
+	position: absolute;
+	top: 30px;
+	right: 5%;
+
+}
+#right2{
+	width:690px;
+	height: 700px;
+	float: right;
+	display: none;
+	position: absolute;
+	top: 100px;
+	right: 5%;
+	overflow: auto;
+}
+.nav{
+	position: absolute;
+	left: 250px;
+	bottom: 20px;
+}
+.nav>li{
+	float: left;
+	width: 15px;
+	height: 15px;
+	background: #ccc;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 50%;
+}
+.nav .active{
+	background: black;
+}
+label{
+	text-align: center;
+	font-size: 40px;
+
+}
+.bg2{
+	width: 1579px;
+	height: 900px;
+	overflow: hidden;
+	position: relative;
+	background: url("imgs/bg2.jpg");
+	opacity: 0.9;
+}
+#but{
+	margin-top: 50px;
+	width: 200px;
+	height: 70px;
+	background-color: white;
+	color: black;
+	border-color:grey ;
+	font-size:40px;
+	opacity: 0.8;
+	font-family: Arial,Helvetica,sans-serif;
+}
+#but:hover{
+	box-shadow: 13px 13px 5px #888888;
+}
+.bottom{
+	width: 1100px;
+	height: 200px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	top: 800px;
+	left: 0;
+	right: 0;
+
+}
+h5{
+	color: white;
+	font-size: 15px;
+	line-height: 20px;
+}
+h3{
+	color: #B0C4DE;
+}
+.middle{
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+.tit{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	font-size: 40px;
+	font-family:"FZYaoti";
+	color:rgb(3,41,81) ;
+
+}
+.mid{
+	width: 250px;
+	float: left;
+	margin:  100px 65px;
+
+}
+.shadow{
+	box-shadow: 10px 10px 5px #888888;
+}
+.button{
+	margin:10px 70px;
+	width: 120px;
+	height: 25px;
+	font-size: 30px;
+	background-color:rgba(255,0,0,0);
+	color:#696969;
+	border: none;
+}
+.button:hover{
+	color:#000000;
+}
